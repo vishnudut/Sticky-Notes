@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Sticky Notes</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Pontano+Sans" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stickynote.css">
+    <script type= "text/javascript" src="stickynote.js"></script>
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="card" id="dude">
+        <div class="card-title">
+            <input placeholder="Title" maxlength="20" class="title" id="title">
+        </div>
+        <div class="content">
+            <textarea class="notes" placeholder="Enter your note here" id="note" rows="10" cols="40"></textarea>
+        </div>
+        <button class="butt" id="add">Add Note</button>
+        <button onclick="erase()" class="butt">Erase</button>
+    </div>
+
+    <div id="created_note">
+
+    </div>
+
+</body>
+</html>

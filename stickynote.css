@@ -1,0 +1,112 @@
+body{
+    font-family:'PT Sans', sans-serif;
+    background-image:url('/Images/polka.png');
+    overflow-x: hidden;
+}
+.card{
+    background-color:hsl(48, 100%, 67%);
+    height:auto;
+    width:300px;
+    border-radius:5px;
+    text-align:center;
+    margin:20px;
+    padding-bottom:40px;
+    margin-left:40%;
+    
+}
+
+.added_card{
+    background-color:hsl(48, 100%, 67%);
+    height:auto;
+    width:300px;
+    border-radius:5px;
+    text-align:center;
+    margin:10px;
+    display:inline-block;
+}
+
+.content{
+    margin-top:10px;
+
+}
+.notes{
+    border-radius:10px;
+    border:none;
+    outline:none;
+    background-color:hsl(48, 100%, 67%);
+    font-size:14px;
+    width:250px;
+    font-weight:500;
+
+}
+.added_notes{
+    border-radius:10px;
+    border:none;
+    outline:none;
+    background-color:hsl(48, 100%, 67%);
+    font-size:14px;
+    width:250px;
+    margin:5%;
+}
+ .title{
+    margin-top:10px;;
+    outline:none;
+    border:none;
+    background-color: hsl(48, 100%, 67%);
+    text-decoration:underline;
+    border-radius:5px;
+    font-size:27px;
+    padding:10px;
+    width:300px;
+    font-weight:bold;
+    color:hsl(0, 0%, 29%);
+} 
+
+.added_title{
+    margin-top:5px;
+    outline:none;
+    border:none;
+    background-color: hsl(48, 100%, 67%);
+    text-decoration:underline;
+    border-radius:5px;
+    font-size:27px;
+    padding:10px;
+    width:300px;
+    font-weight:bold;
+    color:hsl(0, 0%, 29%);
+}
+
+.icon{
+    padding-left:80%;
+    margin-top:7%;
+}
+
+.butt{
+    background-color:hsl(0, 0%, 98%);
+    font-size:15px;
+    border-radius:5px;
+    margin-top:10%;
+    outline:none;
+
+}
+.added_but{
+    background-color:hsl(0, 0%, 98%);
+    font-size:15px;
+    border-radius:5px;
+    margin-top:10%;
+    outline:none;
+    margin-bottom:10%;
+}
+#del{
+    font-size:25px;
+    float:right;
+    margin-top:10%;
+    margin-right:10%;
+    color:hsl(14, 100%, 53%);
+}
+
+#created_note{
+    width:1500;
+    padding-left:5%;
+    margin-top:5%;
+}

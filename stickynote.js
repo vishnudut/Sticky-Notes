@@ -1,5 +1,5 @@
 window.onload = function () {
-    
+
     var x = document.getElementById("note")
     var z = document.getElementById("dude")
     var add = document.getElementById("add")
@@ -22,10 +22,10 @@ window.onload = function () {
     function new_note() {
         const note_obj = {
             title: document.getElementById("title").value,
-            content: document.getElementById("note").value
+            content: document.getElementById("note").value,
+            id: count_numberof_Notes()
         }
 
-        
         var note_arr = getNotes();
         note_arr.push(note_obj);
         storeNotes(note_arr);
@@ -45,6 +45,7 @@ window.onload = function () {
 
         var del = document.createElement('div')
         del.innerHTML = '<a href="#"><i class="fas fa-trash-alt" id="del"></i></a>';
+        del.id="delete_note_id";
 
         var title = document.createElement('input');
         title.className = "added_title";
@@ -79,12 +80,13 @@ window.onload = function () {
         document.getElementById("title").value = "";
         document.getElementById("note").value = "";
 
-
-        del.addEventListener("click", function () {
-            document.getElementById("created_note").removeChild(card);
+        del.addEventListener("click",function(){
+            document.getElementById("created_note").removeChild
         })
-
     }
+
+    
+        
 
     // Function to erase the contents of the note Erase command.
     function erase() {
@@ -93,6 +95,7 @@ window.onload = function () {
     }
 
     var storage_name = "stickynotes007";
+    var count_storage = "notescount"
 
     function getNotes() {
         // stores : nothing 
@@ -113,9 +116,48 @@ window.onload = function () {
     }
 
     function count_numberof_Notes() {
-
+        var no_of_notes = localStorage.getItem(count_storage)
+        if (no_of_notes == "" || no_of_notes == null) {
+            localStorage.setItem(count_storage, 0)
+            return 0;
+        }
+        var count = parseInt(no_of_notes) + 1;
+        localStorage.setItem(count_storage, count);
+        return count;
     }
 
+
+    function delete_note(e){
+        //returns an array containing notes other than the note to be deleted 
+    
+        var modified_note_arr = []
+        var note_array_in_localstorage = getNotes() 
+        console.log(note_array_in_localstorage)
+        var note_id = e.target.id;
+        console.log(note_id);
+        var notes_count = note_array_in_localstorage.length
+        for(var i=0; i<notes_count ; i++){
+            var v = note_array_in_localstorage[i]
+            if(v.id != note_id)
+                modified_note_arr.push(note_array_in_localstorage[i]);
+
+        }
+        return modified_note_arr 
+        console.log(modified_note_arr);
+    }
+    window.delete_note = delete_note
+
+    
+
+    // function del(e){
+    //     console.log(e);
+    //     console.log(e.target);
+    // }
+    // var d = document.getElementById("delete_note_id")
+    // // var k = delete_note(id_of_note) // returns the array containing notes other than the deleted note;
+    // // storeNotes(k)
+    //  d.addEventListener(click,del)
+    
     //Function to initialize 
     function init() {
         var note_arr = getNotes();

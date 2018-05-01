@@ -1,6 +1,6 @@
 body{
     font-family:'PT Sans', sans-serif;
-    background-image:url('/Images/polka.png');
+    background-image:url('polka.png');
     overflow-x: hidden;
 }
 .card{

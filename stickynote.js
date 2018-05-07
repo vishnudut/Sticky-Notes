@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
     var x = document.getElementById("note")
     var z = document.getElementById("dude")
@@ -25,27 +25,31 @@ window.onload = function () {
             content: document.getElementById("note").value,
             id: count_numberof_Notes()
         }
-
+        console.log(note_obj.id)
         var note_arr = getNotes();
         note_arr.push(note_obj);
         storeNotes(note_arr);
 
-        addNote(note_obj.title, note_obj.content);
+        addNote(note_obj.title, note_obj.content, note_obj.id);
     }
 
     add.addEventListener("click", new_note);
 
 
 
-    function addNote(note_title, content) {
+    function addNote(note_title, content, del_id) {
 
         var card = document.createElement('div');
         card.className = "added_card";
         card.id = "add_card"
 
         var del = document.createElement('div')
-        del.innerHTML = '<a href="#"><i class="fas fa-trash-alt" id="del"></i></a>';
-        del.id="delete_note_id";
+        del.innerHTML = 'x';
+        del.className = "del_button"
+        del.id = del_id;
+        console.log(del_id)
+    
+
 
         var title = document.createElement('input');
         title.className = "added_title";
@@ -80,9 +84,8 @@ window.onload = function () {
         document.getElementById("title").value = "";
         document.getElementById("note").value = "";
 
-        del.addEventListener("click",function(){
-            document.getElementById("created_note").removeChild
-        })
+        var d = document.getElementById(del_id)
+        d.addEventListener("click",delete_note)
     }
 
     
@@ -94,7 +97,7 @@ window.onload = function () {
         document.getElementById("title").value = ""
     }
 
-    var storage_name = "stickynotes007";
+    var storage_name = "stickynotes010";
     var count_storage = "notescount"
 
     function getNotes() {
@@ -132,9 +135,8 @@ window.onload = function () {
     
         var modified_note_arr = []
         var note_array_in_localstorage = getNotes() 
-        console.log(note_array_in_localstorage)
         var note_id = e.target.id;
-        console.log(note_id);
+        console.log("target.id " ,note_id)
         var notes_count = note_array_in_localstorage.length
         for(var i=0; i<notes_count ; i++){
             var v = note_array_in_localstorage[i]
@@ -142,31 +144,24 @@ window.onload = function () {
                 modified_note_arr.push(note_array_in_localstorage[i]);
 
         }
-        return modified_note_arr 
-        console.log(modified_note_arr);
+        console.log(modified_note_arr)
+        storeNotes(modified_note_arr)
+        document.getElementById("created_note").innerHTML = ""
+        render()
     }
     window.delete_note = delete_note
 
-    
 
-    // function del(e){
-    //     console.log(e);
-    //     console.log(e.target);
-    // }
-    // var d = document.getElementById("delete_note_id")
-    // // var k = delete_note(id_of_note) // returns the array containing notes other than the deleted note;
-    // // storeNotes(k)
-    //  d.addEventListener(click,del)
     
-    //Function to initialize 
-    function init() {
+    //Function to renderialize 
+    function render() {
         var note_arr = getNotes();
         for (var i = 0; i < note_arr.length; i++) {
             note = note_arr[i];
             no_title = note.title;
             content = note.content;
-            addNote(no_title, content)
+            no_id = note.id
+            addNote(no_title, content ,no_id )
         }
     }
-    init();
-}
+    render();

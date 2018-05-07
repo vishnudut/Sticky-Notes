@@ -110,3 +110,11 @@ body{
     padding-left:5%;
     margin-top:5%;
 }
+
+.del_button{
+    font-size:30px;
+    color:red;
+    float:right;
+    padding-right:15px;
+    cursor: pointer;
+}

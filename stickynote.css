@@ -1,120 +1,166 @@
-body{
-    font-family:'PT Sans', sans-serif;
-    background-image:url('polka.png');
+body {
+    font-family: 'PT Sans', sans-serif;
+    /* background-image:url('polka.png'); */
     overflow-x: hidden;
-}
-.card{
-    background-color:hsl(48, 100%, 67%);
-    height:auto;
-    width:300px;
-    border-radius:5px;
-    text-align:center;
-    margin:20px;
-    padding-bottom:40px;
-    margin-left:40%;
-    
+    background: linear-gradient(270deg, #f23d3d, #bdba2f, #29ca28, #2897ca, #e26de8);
+    background-size: 1000% 1000%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
 }
 
-.added_card{
-    background-color:hsl(48, 100%, 67%);
-    height:auto;
-    width:300px;
-    border-radius:5px;
-    text-align:center;
-    margin:10px;
-    display:inline-block;
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
-.content{
-    margin-top:10px;
-
-}
-.notes{
-    border-radius:10px;
-    border:none;
-    outline:none;
-    background-color:hsl(48, 100%, 67%);
-    font-size:14px;
-    width:250px;
-    font-weight:500;
-
-}
-.added_notes{
-    border-radius:10px;
-    border:none;
-    outline:none;
-    background-color:hsl(48, 100%, 67%);
-    font-size:14px;
-    width:250px;
-    margin:5%;
-}
- .title{
-    margin-top:10px;;
-    outline:none;
-    border:none;
-    background-color: hsl(48, 100%, 67%);
-    text-decoration:underline;
-    border-radius:5px;
-    font-size:27px;
-    padding:10px;
-    width:300px;
-    font-weight:bold;
-    color:hsl(0, 0%, 29%);
-} 
-
-.added_title{
-    margin-top:5px;
-    outline:none;
-    border:none;
-    background-color: hsl(48, 100%, 67%);
-    text-decoration:underline;
-    border-radius:5px;
-    font-size:27px;
-    padding:10px;
-    width:300px;
-    font-weight:bold;
-    color:hsl(0, 0%, 29%);
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
-.icon{
-    padding-left:80%;
-    margin-top:7%;
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
-.butt{
-    background-color:hsl(0, 0%, 98%);
-    font-size:15px;
-    border-radius:5px;
-    margin-top:10%;
-    outline:none;
-
-}
-.added_but{
-    background-color:hsl(0, 0%, 98%);
-    font-size:15px;
-    border-radius:5px;
-    margin-top:10%;
-    outline:none;
-    margin-bottom:10%;
-}
-#del{
-    font-size:25px;
-    float:right;
-    margin-top:10%;
-    margin-right:10%;
-    color:hsl(14, 100%, 53%);
+.card {
+    background-color: F5F5F5;
+    height: auto;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+    padding-bottom: 40px;
+    margin-left: 40%;
 }
 
-#created_note{
-    width:1500;
-    padding-left:5%;
-    margin-top:5%;
+.added_card {
+    background-color: F5F5F5;
+    height: auto;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
 }
 
-.del_button{
-    font-size:30px;
-    color:red;
-    float:right;
-    padding-right:15px;
+.content {
+    margin-top: 10px;
+}
+
+.notes {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: F5F5F5;
+    font-size: 16px;
+    width: 250px;
+    font-weight: 700;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.added_notes {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: F5F5F5;
+    font-size: 16px;
+    width: 250px;
+    margin: 5%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.title {
+    margin-top: 10px;
+    ;
+    outline: none;
+    border: none;
+    background-color: F5F5F5;
+    text-decoration: underline;
+    border-radius: 5px;
+    font-size: 27px;
+    padding: 10px;
+    width: 300px;
+    font-weight: bold;
+    color: hsl(0, 0%, 29%);
+}
+
+.added_title {
+    margin-top: 5px;
+    outline: none;
+    border: none;
+    background-color: F5F5F5;
+    text-decoration: underline;
+    border-radius: 5px;
+    font-size: 27px;
+    padding: 10px;
+    width: 300px;
+    font-weight: bold;
+    color: hsl(0, 0%, 29%);
+}
+
+.icon {
+    padding-left: 80%;
+    margin-top: 7%;
+}
+
+.butt {
+    background-color: hsl(0, 0%, 98%);
+    font-size: 15px;
+    border-radius: 7px;
+    margin-top: 10%;
+    outline: none;
+}
+
+.added_but {
+    background-color: hsl(0, 0%, 98%);
+    font-size: 15px;
+    border-radius: 7px;
+    margin-top: 10%;
+    outline: none;
+    margin-bottom: 10%;
+}
+
+#del {
+    font-size: 25px;
+    float: right;
+    margin-top: 10%;
+    margin-right: 10%;
+    color: hsl(14, 100%, 53%);
+}
+
+#created_note {
+    width: 1500;
+    padding-left: 5%;
+    margin-top: 5%;
+}
+
+.del_button {
+    font-size: 30px;
+    color: red;
+    float: right;
+    padding-right: 15px;
     cursor: pointer;
 }
